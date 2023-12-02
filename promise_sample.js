@@ -1,6 +1,7 @@
 let availableItem1Count = 5;
 let availableItem2Count = 2;
 
+// Function to order and fulfill Item1
 function orderItem1(orderNumber, quantity) {
     console.log(`Order : ${orderNumber} Item1 - ${quantity} quantity`);
     return new Promise((resolve, reject) => {
@@ -16,6 +17,7 @@ function orderItem1(orderNumber, quantity) {
     });
 }
 
+// Function to order and fulfill Item2
 function orderItem2(orderNumber, quantity) {
     console.log(`Order : ${orderNumber} Item2 - ${quantity} quantity`);
     return new Promise((resolve, reject) => {
@@ -50,7 +52,7 @@ secondOrderReceipt.then(msg => {
     console.log('CANCELLED :', errMsg);
 });
 
-// Order 3 (2 orders success)
+// Order 3 (2 orders, both success)
 orderNo++;
 let thirdOrderReceipt = Promise.all([
     orderItem1(orderNo, 1),
@@ -72,7 +74,7 @@ fourthOrderReceipt.then(msg => {
     console.log('CANCELLED :', errMsg);
 });
 
-// Order 5 (2 ordes failure)
+// Order 5 (2 orders, both failure)
 orderNo++;
 let fifthOrderReceipt = Promise.all([
     orderItem1(orderNo, 10),
@@ -85,7 +87,7 @@ fifthOrderReceipt.then(msg => {
     console.log('CANCELLED : one of the order got cancelled.', errMsg);
 });
 
-
+// Order 6 (2 orders, 1 success and 1 failed)
 orderNo++;
 let sixthOrderReceipt = Promise.all([
     orderItem1(orderNo, 1),
@@ -97,6 +99,7 @@ sixthOrderReceipt.then(msg => {
 }).catch(errMsg => {
     console.log('CANCELLED : one of the order got cancelled.', errMsg);
 });
+
 
 
 /*******************************************
