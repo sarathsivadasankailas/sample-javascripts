@@ -97,3 +97,29 @@ sixthOrderReceipt.then(msg => {
 }).catch(errMsg => {
     console.log('CANCELLED : one of the order got cancelled.', errMsg);
 });
+
+
+/*******************************************
+ * RESULT
+
+
+Order : 1 Item1 - 2 quantity
+Order : 2 Item2 - 1 quantity
+Order : 3 Item1 - 1 quantity
+Order : 3 Item2 - 1 quantity
+Order : 4 Item1 - 10 quantity
+Order : 5 Item1 - 10 quantity
+Order : 5 Item2 - 10 quantity
+Order : 6 Item1 - 1 quantity
+Order : 6 Item2 - 5 quantity
+CANCELLED : Order : 4 Item1 order cannot be processed for 10 quantity.
+CANCELLED : one of the order got cancelled. Order : 5 Item1 order cannot be processed for 10 quantity.
+CANCELLED : one of the order got cancelled. Order : 6 Item2 order cannot be processed for 5 quantity.
+PROCESSED : Order : 2 Item2 Order Fulfilled with 1 quantity.
+PROCESSED : Order : 1 Item1 Order Fulfilled with 2 quantity.
+PROCESSED : [
+  'Order : 3 Item1 Order Fulfilled with 1 quantity.',
+  'Order : 3 Item2 Order Fulfilled with 1 quantity.'
+]
+
+********************************************/
